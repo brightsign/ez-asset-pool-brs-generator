@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BrightSign Bootstrap</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+    <script src="controllers.js"></script>
+    <script src="components.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-app="bsApp" ng-controller="bsController">
+<div class="container">
+    <div class="jumbotron">
+        <h1>BrightSign Bootstrap</h1>
+
+        <p class="lead">Use this page to generate an autorun.brs that you can download to an SD card, put in your
+            BrightSign
+            player and Go!</p>
+    </div>
+    <form role="form">
+        <fieldset style="margin-top: 2em">
+            <legend><span class="glyphicon glyphicon-globe"></span>&nbsp;Run From My Website</legend>
+            <p>This is the easiest option, but if the network connection slows down or disappears, your sign will stop
+                working.</p>
+
+            <div class="form-group">
+                <label for="remote-url">URL to the HTML of your sign. Usually this is index.html:</label>
+                <input type="url" class="form-control" id="remote-url" ng-model="remoteUrl"
+                       placeholder="Enter URL">
+            </div>
+            <button type="submit" class="btn btn-info" download-brs="generateBrs('remote')">Generate autorun.brs
+            </button>
+        </fieldset>
+        <fieldset>
+            <legend><span class="glyphicon glyphicon-hdd"></span>&nbsp;Run From My BrightSign Player</legend>
+            <p>This option requires creating a <a href="http://dev.w3.org/html5/spec-preview/offline.html">manifest</a>, but if the network connection slows down or disappears, your
+                sign will continue
+                to work. Once you enter the URL of your manifest, and you have installed the autorun.brs on your
+                BrightSign player, the player will download all the assets mentioned in the manifest, then start playing
+                index.html</p>
+
+            <div class="form-group">
+                <label for="local-url">URL to your manifest. Usually this is manifest.mf:</label>
+                <input type="url" class="form-control" id="local-url" ng-model="localUrl"
+                       placeholder="Enter Manifest URL">
+            </div>
+            <button type="submit" class="btn btn-info" download-brs="generateBrs('local')">Generate autorun.brs
+            </button>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
