@@ -22,6 +22,7 @@ braces to do substitution of the parameters entered by the user in the template.
 The site is styled using bootstrap css.
 
 Note: this is a demo. It is not very robust if the network connection goes down when assets are being downloaded.
+
 Note: we do not support all features of the w3c manifest. Here is an example of what is supported:
 
 ``` 
