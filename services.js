@@ -22,4 +22,14 @@ bsApp.factory('bsClick', function () {
         }
     };
 });
+bsApp.service('loadFile',
+    function ($http) {
+        this.getData = function (filename) {
+            return $http({
+                method: 'GET',
+                url: filename
+            })
+        }
+    }
+);
 
