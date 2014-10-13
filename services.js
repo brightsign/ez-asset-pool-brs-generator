@@ -30,6 +30,5 @@ bsApp.service('loadFile',
                 url: filename
             })
         }
-    }
-);
+    });
 
